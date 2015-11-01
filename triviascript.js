@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log('SGo');
+  console.log('SGo'); // nice! remove debug code before submitting in the future
 //Clicking start displays first question and 4 potential answers
   $('.start').click(function(e) {
     e.preventDefault();
@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('input').show('slow');
 // Restart button hides question and answers
   $(".reset").on("click", function(){
-     location.reload();
+     location.reload();//this works, but can you think of a way to reload the data without an entire page refresh?
     })
 // Array of questions and answers
 var tQuestions = {
@@ -21,6 +21,9 @@ var tQuestions = {
   question6: ['"Worms" are found in which type of Tequila?'], answers6: ['Ordinario', 'Mezcal', 'Corazon', 'Cabeza'],
   question7: ['The Blue Agave is closley related to which other plant?'], answers7: ['Lily','Cacti', 'Aloe', 'Asparagus'],
 }
+// the above looks great! I recommend an array of question/answer objects rather than an object containing key value pairs
+// of question/answer pairs. This will allow you or the user to create more questions if they wanted to in the future / 
+// prevent you from having to hardcode-reference questions by their number.
 
 $('.q1').html('<h2>'+tQuestions.question1+'</h2>')
   for (i = 0; i < tQuestions.answers1.length; ++i) {
@@ -47,7 +50,7 @@ $('.q1').html('<h2>'+tQuestions.question1+'</h2>')
 
 $('.q1').html('<h2>'+tQuestions.question2+'</h2>')
   for (i = 0; i < tQuestions.answers2.length; ++i) {
-  var answer = tQuestions.answers2[i]
+  var answer = tQuestions.answers2[i] // please indent code correctly.
   var btn = $('<button>'+answer+'</button>')
   if( i == 0 ){
     btn.addClass("correct");
@@ -57,13 +60,13 @@ $('.q1').html('<h2>'+tQuestions.question2+'</h2>')
   $("button").on("click", function(){
     if($(this).hasClass("correct")){
       tQuestions.question = tQuestions.question + 1;
-      $('#counter').html(function(i, val) { return +val+1 });
+      $('#counter').html(function(i, val) { return +val+1 }); // nice!
       alert("Another!")
     }else{
-      $( "button" ).shake;
+      $( "button" ).shake();
 }
 
-$('.q1').html('<h2>'+tQuestions.question3+'</h2>')
+$('.q1').html('<h2>'+tQuestions.question3+'</h2>') // how does this line not execute immediately?
 for (i = 0; i < tQuestions.answers3.length; ++i) {
   var answer = tQuestions.answers3[i]
   var btn = $('<button>'+answer+'</button>')
@@ -79,14 +82,15 @@ for (i = 0; i < tQuestions.answers3.length; ++i) {
       alert("Party!")
     }else{
       $( "button" ).shake;
-}
+} // the code on 69 - 85 looks very similar to the above block - can you think of a way to combine their functionality?
 
 $('.q1').html('<h2>'+tQuestions.question4+'</h2>')
 for (i = 0; i < tQuestions.answers4.length; ++i) {
   var answer = tQuestions.answers4[i]
   var btn = $('<button>'+answer+'</button>')
   if( i == 3 ){
-      btn.addClass("correct");
+      btn.addClass("correct"); // maybe you can store which one is correct in your above questions object
+      // this would allow you to shuffle the answers each time someone plays the game.
     }
     $(".q1").append(btn)
   }
@@ -160,3 +164,4 @@ for (i = 0; i < tQuestions.answers7.length; ++i) {
 })
 })
 })
+// please indent code correctly

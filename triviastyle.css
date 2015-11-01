@@ -1,5 +1,6 @@
 body{
   background-image:url(http://photos1.blogger.com/blogger/7844/1241/1600/fused%20agave.0.jpg);
+  /* download the above image and link to it locally to prevent a future 404 */
   background-repeat: space;
   background-color: yellow;
   background-size: cover;
@@ -65,6 +66,7 @@ button{
   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
   box-shadow: rgba(0,0,0,1) 0 1px 0;
+  /* nice use of vendor prefixes */
   text-shadow: rgba(0,0,0,.4) 0 1px 0;
   color: #ffffff;
   font-size: 22px;
@@ -140,7 +142,7 @@ button{
   vertical-align: middle;
   position: fixed;
   }
-  .button:hover {
+  .button:hover { /* this code looks the same as 112 - do you need it? */
     border-top-color: #28597a;
     background: #ededed;
     color: #ccc;
